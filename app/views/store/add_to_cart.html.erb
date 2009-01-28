@@ -1,8 +1,5 @@
 <h1>Din Pragmatiska Kundvagn!(utan AJAX)</h1>
-<ul>
-  <% for item in @cart.items %>
-  <li><%= item.quantity %> &times; <%=h item.title %></li>
-  <% end %>
-</ul>
 
-<%= button_to "Empty cart", :action  => :empty_cart %>
+<div class="cart-title">Din Vagn</div>
+<table>
+  <%= render(:partial  =>  "cart_item", :collection  =>  @cart.items) %>

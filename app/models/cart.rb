@@ -5,8 +5,8 @@ class Cart
     @items = []
   end
   
-  def add_product(product)
-    @items << product
+  def total_price
+    @items.sum { |item| item.price }
   end
   
   def add_product(product)
