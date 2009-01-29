@@ -6,6 +6,8 @@
     <h3><%=h product.title %></h3> 
     <%= product.description %><br/>
   <span class="price"><%= number_to_currency(product.price) %></span>
-  <%= button_to "add to cart", :action  => :add_to_cart, :id  => product %>
+  <% form_remote_tag :url  => { :action  => :add_to_cart, :id  => product } do %>
+    <%= submit_tag "Add to Cart" %>
+  <% end %>
   </div> 
 <% end %>
