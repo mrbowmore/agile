@@ -9,6 +9,10 @@ class Cart
     @items.sum { |item| item.price }
   end
   
+  def total_items
+    @items.sum { |item| item.quantity }
+  end
+  
   def add_product(product)
     current_item = @items.find {|item| item.product == product}
     if current_item
