@@ -1,0 +1,22 @@
+<div class="depot-form">
+
+  <fieldset>
+    <legend>Please log in</legend>
+    
+    <% form_tag do %>
+      <p>
+        <label for="name">Name:</label>
+        <%= text_field_tag :name, params[:name] %>
+      </p>
+      
+      <p>
+        <label for="password">Password</label>
+        <%= password_field_tag :password, params[:params] %>
+      </p>
+      
+      <p>
+        <%= submit_tag "login" %>
+      </p>
+    <% end %>
+  </fieldset>
+</div>

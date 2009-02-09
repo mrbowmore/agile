@@ -1,0 +1,37 @@
+<div class="depot-form">
+  
+  <%= error_messages_for 'order' %>
+  
+  <fieldset>
+    <legend>Please enter ya deetejls</legend>
+    
+    <% form_for :order, :url  => { :action  => :save_order } do |form| %>
+      <p>
+        <%= label :order, :name, "Name:" %>
+        <%= form.text_field :name, :size  => 40 %>
+      </p>
+      
+      <p>
+        <%= label :order, :address; "Address:" %>
+        <%= form.text_area :address, :rows  =>  3, :cols  => 40 %>
+      </p>
+      
+      <p>
+        <%= label :order, :email, "Email:" %>
+        <%= form.text_field :email, :size  => 40 %>
+      </p>
+      
+      <p>
+        <%= label :order, :pay_type, "Pay with:" %>
+        <%=
+          form.select :pay_type,
+                      Order::PAYMENT_TYPES,
+                      :prompt  => "Select a payment method"
+        %>
+      </p>
+      
+      <%= submit_tag "Place order", :class  => "submit" %>
+    <% end %>
+  </fieldset>
+</div>
+      
